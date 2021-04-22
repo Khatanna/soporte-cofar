@@ -1,0 +1,39 @@
+<p>
+    <mat-toolbar color="primary" >     
+
+      <mat-toolbar-row class="banertop">
+        <span class="textsize">Informate</span>
+        <span class="espacio"></span>
+        <button mat-icon-button>
+            <mat-icon>facebook</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>mail_outline</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>alternate_email</mat-icon>
+    </button>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <span>HBM</span>
+        <div class="grupoBotones">
+            <button mat-button [routerLink]="['vistas']" routerLinkActive="active" >Visitas</button>
+            <button mat-button [routerLink]="['pedidos']" routerLinkActive="active" >Pedidos</button>
+            <button mat-button [routerLink]="['cobranzas']" routerLinkActive="active">Cobranzas</button>
+            <button mat-button [routerLink]="['usuarios']" routerLinkActive="active">Usuarios</button>
+            <button mat-button>Imagenes</button>
+          </div>
+    
+          <span class="espacio"></span>
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+            <mat-menu #menu="matMenu">
+            <button mat-menu-item>Config</button>
+            <button mat-menu-item>About</button>
+            </mat-menu>
+      </mat-toolbar-row>      
+
+    </mat-toolbar>
+  </p>

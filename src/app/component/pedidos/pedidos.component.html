@@ -1,0 +1,117 @@
+<mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por" #input>
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  
+ 
+    <!-- Name Column -->
+    <ng-container matColumnDef="PedidoID">
+      <th mat-header-cell *matHeaderCellDef> PedidoID </th>
+      <td mat-cell *matCellDef="let element"> {{element.PedidoID}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="NroPosiciones">
+      <th mat-header-cell *matHeaderCellDef > NroPos </th>
+      <td mat-cell *matCellDef="let element"> {{element.NroPosiciones}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="Estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+      </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Fecha">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="CodCanal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Canal </th>
+      <td mat-cell *matCellDef="let element"> {{element.CodCanal}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="CodSector">
+        <th mat-header-cell *matHeaderCellDef> Sector </th>
+        <td mat-cell *matCellDef="let element"> {{element.CodSector}} </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="CodUsuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CodUsuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.CodUsuario}} </td>
+    </ng-container>
+      
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="MontoTotal">
+      <th mat-header-cell *matHeaderCellDef> Monto </th>
+      <td mat-cell *matCellDef="let element"> {{element.MontoTotal}} </td>
+    </ng-container>   
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Moneda">
+        <th mat-header-cell *matHeaderCellDef> Moneda </th>
+        <td mat-cell *matCellDef="let element"> {{element.Moneda}} </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Nit">
+        <th mat-header-cell *matHeaderCellDef> Nit </th>
+        <td mat-cell *matCellDef="let element"> {{element.Nit}} </td>
+    </ng-container>
+      
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="KUNNR">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> CodCliente </th>
+      <td mat-cell *matCellDef="let element"> {{element.KUNNR}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="RazonSocial">
+        <th mat-header-cell *matHeaderCellDef> Razon Social </th>
+        <td mat-cell *matCellDef="let element"> {{element.RazonSocial}} </td>
+        </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="NroPedido">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> NroPedido </th>
+        <td mat-cell *matCellDef="let element"> {{element.NroPedido}} </td>
+    </ng-container>
+        
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="NroSAP">
+        <th mat-header-cell *matHeaderCellDef> NroSAP </th>
+        <td mat-cell *matCellDef="let element"> {{element.NroSAP}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="MensajeTec">
+        <th mat-header-cell *matHeaderCellDef> MensajeTec </th>
+        <td mat-cell *matCellDef="let element"> {{element.MensajeTec}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Update">
+      <th mat-header-cell *matHeaderCellDef> Update </th>
+      <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="UpdatePedido(element)" (click)="openSnackBar(element.NroPedido, element.IdVendedor)">
+            <mat-icon >sync</mat-icon>
+          </button>
+      </td>      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No hay datos en la tabla "{{input.value}}"</td>
+    </tr>
+  </table>
+  

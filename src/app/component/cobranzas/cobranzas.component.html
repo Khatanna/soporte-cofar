@@ -1,0 +1,128 @@
+<mat-toolbar >
+  <span>Listado General de Cobranzas</span>
+</mat-toolbar>
+  
+  <mat-form-field>    
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por" #input>  
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Copy">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element">         
+          <mat-icon [cdkCopyToClipboard]="element.ReciboID" (click)="SnackBarCopy()">content_copy</mat-icon>      
+      </td>
+    </ng-container>
+ 
+    <!-- Name Column -->
+    <ng-container matColumnDef="ReciboID">
+      <th mat-header-cell *matHeaderCellDef> ReciboID </th>
+      <td mat-cell *matCellDef="let element">{{element.ReciboID}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="CodRecibo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> CodRecibo </th>
+      <td mat-cell *matCellDef="let element"> {{element.CodRecibo}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Estado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+      <td mat-cell *matCellDef="let element" > {{element.Estado}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="Fecha">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+      </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="FechaDoc">
+      <th mat-header-cell *matHeaderCellDef> FechaDoc </th>
+      <td mat-cell *matCellDef="let element"> {{element.FechaDoc}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="FormaPago">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> FormaPago </th>
+      <td mat-cell *matCellDef="let element"> {{element.FormaPago}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="IdVendedor">
+        <th mat-header-cell *matHeaderCellDef> CodVen. </th>
+        <td mat-cell *matCellDef="let element"> {{element.IdVendedor}} </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ImpTotalBS">
+        <th mat-header-cell *matHeaderCellDef> ImpTotalBS </th>
+        <td mat-cell *matCellDef="let element"> {{element.ImpTotalBS}} </td>
+    </ng-container>
+      
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ImpTotalUSD">
+      <th mat-header-cell *matHeaderCellDef> ImpTotalUSD </th>
+      <td mat-cell *matCellDef="let element"> {{element.ImpTotalUSD}} </td>
+    </ng-container>   
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="KUNNR">
+        <th mat-header-cell *matHeaderCellDef> CodCliente </th>
+        <td mat-cell *matCellDef="let element"> {{element.KUNNR}} </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Moneda">
+        <th mat-header-cell *matHeaderCellDef> Moneda </th>
+        <td mat-cell *matCellDef="let element"> {{element.Moneda}} </td>
+    </ng-container>
+      
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="NombreCliente">
+      <th mat-header-cell *matHeaderCellDef> Cliente </th>
+      <td mat-cell *matCellDef="let element"> {{element.NombreCliente}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="NroDocumento">
+        <th mat-header-cell *matHeaderCellDef> NroDoc. </th>
+        <td mat-cell *matCellDef="let element"> {{element.NroDocumento}} </td>
+        </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="NroPosiciones">
+        <th mat-header-cell *matHeaderCellDef> Nropos. </th>
+        <td mat-cell *matCellDef="let element"> {{element.NroPosiciones}} </td>
+    </ng-container>
+        
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Observacion">
+        <th mat-header-cell *matHeaderCellDef> Observacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.Observacion}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Update">
+      <th mat-header-cell *matHeaderCellDef> Update </th>
+      <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="UpdateRecibo(element)" (click)="openSnackBar(element.CodRecibo, element.IdVendedor)">
+            <mat-icon >sync</mat-icon>
+          </button>
+      </td>      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No hay datos en la tabla "{{input.value}}"</td>
+    </tr>
+  </table>
+  
