@@ -11,7 +11,7 @@ const app_routes: Routes = [
     { path: 'cobranzas', component: CobranzasComponent},
     { path: 'usuarios', component: UsuariosComponent},
     
-    { path: '**', pathMatch: 'full', redirectTo: 'vistas'}
+    //{ path: '**', pathMatch: 'full', redirectTo: 'vistas'}
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);

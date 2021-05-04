@@ -1,62 +1,69 @@
-<mat-form-field>
-    <mat-label>Buscar</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por" #input>
+<mat-toolbar class="espacio">
+  <span class="textsize">Datos de usuarios HBM</span>
+</mat-toolbar>
+
+<div class="centrado">
+  <mat-form-field appearance="outline">
+    <mat-label>Buscar Por</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aqui" style="color: blueviolet;" #input >
+    <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
+</div>
   
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
      <!-- Name Column -->
      <ng-container matColumnDef="Cargo">
-      <th mat-header-cell *matHeaderCellDef> Cargo </th>
-      <td mat-cell *matCellDef="let element"> {{element.Cargo}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Cargo </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Cargo}} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="CodUsuario">
-      <th mat-header-cell *matHeaderCellDef> CodUsuario </th>
-      <td mat-cell *matCellDef="let element"> {{element.CodUsuario}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> CodUsuario </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.CodUsuario}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="CodigoSap">
-      <th mat-header-cell *matHeaderCellDef> CodigoSap </th>
-      <td mat-cell *matCellDef="let element"> {{element.CodigoSap}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> CodigoSap </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.CodigoSap}} </td>
     </ng-container>
 
     <!-- Position Column -->
       <ng-container matColumnDef="Contrasena">
-        <th mat-header-cell *matHeaderCellDef> Password </th>
-        <td mat-cell *matCellDef="let element"> {{element.Contrasena}} </td>
+        <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Password </th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Contrasena}} </td>
       </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="Division">
-      <th mat-header-cell *matHeaderCellDef> Division </th>
-      <td mat-cell *matCellDef="let element"> {{element.Division}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Division </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Division}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="DivisionID">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.DivisionID}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> ID </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.DivisionID}} </td>
     </ng-container>
 
     <!-- Position Column -->
       <ng-container matColumnDef="Nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+        <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Nombre </th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Nombre}} </td>
       </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="Organizacion">
-        <th mat-header-cell *matHeaderCellDef> Organizacion </th>
-        <td mat-cell *matCellDef="let element"> {{element.Organizacion}} </td>
+        <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Organizacion </th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Organizacion}} </td>
     </ng-container>
       
     <!-- Symbol Column -->
     <ng-container matColumnDef="Regional">
-      <th mat-header-cell *matHeaderCellDef> Regional </th>
-      <td mat-cell *matCellDef="let element"> {{element.Regional}} </td>
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Regional </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.Regional}} </td>
     </ng-container>
     
   

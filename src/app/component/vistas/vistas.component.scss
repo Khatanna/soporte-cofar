@@ -8,3 +8,29 @@ table {
     font-size: 14px;
     margin: 1rem; 
   }
+
+  .espacio {
+    justify-content: center;
+    height: 48px;
+  }
+  
+  .textsize{
+    font-size: 16px;
+  }
+  
+  
+  .textsizeceldas{
+    font-size: 12px;
+  }
+  
+  .colorcabecera{
+    background-color: rgb(239, 239, 243);
+    padding-right: 10px;
+  }
+
+  .centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
