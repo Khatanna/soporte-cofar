@@ -20,4 +20,5 @@ export interface IPedidos {
     OrgVenta: string;
     PedidoID: string;
     RazonSocial: string;
+    Pendiente: string;
 }

@@ -10,6 +10,7 @@ const app_routes: Routes = [
     { path: 'pedidos', component: PedidosComponent},
     { path: 'cobranzas', component: CobranzasComponent},
     { path: 'usuarios', component: UsuariosComponent},
+    { path: 'visitas', component: VistasComponent},
     
     //{ path: '**', pathMatch: 'full', redirectTo: 'vistas'}
 ];

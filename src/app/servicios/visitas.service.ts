@@ -11,12 +11,18 @@ import { IVisitas } from '../models/visitas'
   providedIn: 'root'
 })
 export class VisitasService {
+  OrgVentasActual:any
 
   private VisitasCollection: AngularFireList<IVisitas>;
   lst_visitas: Observable<IVisitas[]>;
 
   constructor(private readonly db:AngularFireDatabase) { 
-    this.VisitasCollection = db.list(":80/Actividad/1100");
+
+    this.OrgVentasActual = localStorage.getItem("OrgVentas");
+    console.log(this.OrgVentasActual);
+    
+    this.VisitasCollection = db.list(":80/Actividad/"+this.OrgVentasActual);    
+    
     this.lst_visitas = this.VisitasCollection.snapshotChanges().pipe(
       map( actions => actions.map( a => {
         const data = a.payload.toJSON() as IVisitas;

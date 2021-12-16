@@ -8,7 +8,7 @@ import { VisitasService } from '../../servicios/visitas.service';
   styleUrls: ['./vistas.component.scss']
 })
 export class VistasComponent implements OnInit {
-
+  
   displayedColumns: string[] = ['ActividadID', 'CodVendedor', 'CodUsuario', 'Estado', 'FechaCrea', 'Kunnr', 'NombreCliente', 'OrgVenta'];
   dataSource = new MatTableDataSource();
 
@@ -18,7 +18,7 @@ export class VistasComponent implements OnInit {
     
   }
 
-  constructor( private visitasServices: VisitasService ) { }
+  constructor( private visitasServices: VisitasService) { }
   ngOnInit(): void {
     this.visitasServices.ObtenerTodasVisitas().subscribe(resp=>this.dataSource.data=resp);   // console.log(resp)
   }

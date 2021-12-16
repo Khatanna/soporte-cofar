@@ -18,7 +18,12 @@
       <mat-toolbar-row>
         <span>HBM</span>
         <div class="grupoBotones">
-            <button mat-button [routerLink]="['vistas']" routerLinkActive="active" >Visitas</button>
+          <button mat-button [matMenuTriggerFor]="menu">Visitas</button>
+            <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['vistas']" routerLinkActive="active" (click)="test(1100)">Industria & Construcción</button>
+            <button mat-menu-item [routerLink]="['visitas']" routerLinkActive="active" (click)="test(1200)">Consumo & Pharma</button>
+            </mat-menu>
+            
             <button mat-button [routerLink]="['pedidos']" routerLinkActive="active" >Pedidos</button>
             <button mat-button [routerLink]="['cobranzas']" routerLinkActive="active">Cobranzas</button>
             <button mat-button [routerLink]="['usuarios']" routerLinkActive="active">Usuarios</button>
