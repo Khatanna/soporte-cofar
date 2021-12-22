@@ -12,7 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class PedidosComponent implements OnInit {
 
-  displayedColumns: string[] = ['PedidoID','NroPosiciones', 'Estado', 'Fecha', 'CodCanal', 'CodSector', 'CodUsuario', 'MontoTotal','Moneda', 'Nit','KUNNR','RazonSocial','NroPedido','NroSAP','Pendiente','MensajeTec','Update'];
+  displayedColumns: string[] = ['View','Copy','PedidoID','NroPosiciones', 'Estado', 'Fecha', 'CodCanal', 'CodSector', 'CodUsuario', 'MontoTotal','Moneda', 'Nit','KUNNR','RazonSocial','NroPedido','NroSAP','Pendiente','MensajeTec','Update'];
   dataSource = new MatTableDataSource();
 
    applyFilter(event: Event) {
@@ -44,6 +44,12 @@ export class PedidosComponent implements OnInit {
   UpdatePedido(obj:IPedidos){
     console.log(obj);
     this.pedidosService.ActualizaPedidos(obj);
+  }
+
+  SnackBarCopy() {
+    this._snackBar.open("Copiado al portapales", "Cerrar", {
+      duration: 1000,
+    });
   }
 
 }

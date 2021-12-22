@@ -12,7 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CobranzasComponent implements OnInit {
 
-  displayedColumns: string[] = ['Copy','ReciboID', 'CodRecibo', 'Estado', 'Fecha', 'FechaDoc', 'FormaPago', 'IdVendedor', 'ImpTotalBS', 'ImpTotalUSD','KUNNR','Moneda','NombreCliente','NroDocumento','NroPosiciones','Observacion','Update'];
+  displayedColumns: string[] = ['View','Copy','ReciboID', 'CodRecibo', 'Estado', 'Fecha', 'FechaDoc', 'FormaPago', 'IdVendedor', 'ImpTotalBS', 'ImpTotalUSD','KUNNR','Moneda','NombreCliente','NroDocumento','NroPosiciones','Observacion','Update'];
   dataSource = new MatTableDataSource();
 
    applyFilter(event: Event) {

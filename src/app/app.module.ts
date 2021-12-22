@@ -32,6 +32,8 @@ import { UsuariosComponent } from './component/usuarios/usuarios.component';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {ClipboardModule} from '@angular/cdk/clipboard';
+import { CobranzaDetalleComponent } from './component/cobranza-detalle/cobranza-detalle.component';
+import { PedidoDetalleComponent } from './component/pedido-detalle/pedido-detalle.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     VistasComponent,
     PedidosComponent,
     CobranzasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    CobranzaDetalleComponent,
+    PedidoDetalleComponent
   ],
   imports: [
     BrowserModule,
