@@ -34,6 +34,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { CobranzaDetalleComponent } from './component/cobranza-detalle/cobranza-detalle.component';
 import { PedidoDetalleComponent } from './component/pedido-detalle/pedido-detalle.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { PedidoDetalleComponent } from './component/pedido-detalle/pedido-detall
     MatSortModule,
     MatSnackBarModule,
     ClipboardModule,
+    MatDialogModule,
 
     //firebase
     AngularFirestoreModule,

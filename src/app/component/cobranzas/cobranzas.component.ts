@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { MatTableDataSource } from '@angular/material/table';
 import { CobranzasService } from '../../servicios/cobranzas.service';
 import { MatSort } from '@angular/material/sort';
 import { ICobranzas } from 'src/app/models/cobranzas';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import {CobranzaDetalleComponent} from './../cobranza-detalle/cobranza-detalle.component';
 
 @Component({
   selector: 'app-cobranzas',
@@ -21,7 +23,12 @@ export class CobranzasComponent implements OnInit {
     
   }
 
-  constructor(private cobranzasServices: CobranzasService, private _snackBar: MatSnackBar) { }
+  constructor(
+    private cobranzasServices: CobranzasService, 
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
+    ) { }
+
   ngOnInit(): void {
     this.cobranzasServices.ObtenerTodasCobranzas().subscribe(resp=>this.dataSource.data=resp)
   }  
@@ -50,6 +57,13 @@ export class CobranzasComponent implements OnInit {
   UpdateRecibo(obj:ICobranzas){
     console.log(obj);
     this.cobranzasServices.ActualizaRecibos(obj);
+  }
+
+  openDialog() {
+   
+    const dialogRef = this.dialog.open(CobranzaDetalleComponent, {
+      width: "70%"
+    });
   }
 
 }
