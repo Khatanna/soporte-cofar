@@ -1,1 +1,83 @@
-<p>cobranza-detalle works!</p>
+<p>Detalle del Recibo</p>
+
+<div class="centrado">
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar Por</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aqui" style="color: blueviolet;" #input>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+ 
+    <!-- Name Column -->
+    <ng-container matColumnDef="AbonoID">
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> AbonoID </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas">{{element.AbonoID}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="KUNNR">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="colorcabecera"> KUNNR </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.KUNNR}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="CodRecibo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="colorcabecera"> CodRecibo </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.CodRecibo}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="FechaModificacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="colorcabecera"> FechaModificacion</th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.FechaModificacion}} </td>
+      </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="CODSBO">
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> CODSBO </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.CODSBO}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="CodFactura">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="colorcabecera"> CodFactura </th>
+      <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.CodFactura}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+      <ng-container matColumnDef="ImporteBS">
+        <th mat-header-cell *matHeaderCellDef class="colorcabecera"> ImporteBS </th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.ImporteBS}} </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ImporteUSD">
+        <th mat-header-cell *matHeaderCellDef class="colorcabecera"> ImporteUSD </th>
+        <td mat-cell *matCellDef="let element" class="textsizeceldas"> {{element.ImporteUSD}} </td>
+    </ng-container>
+      
+    
+
+    <!-- Symbol Column
+    <ng-container matColumnDef="Update">
+      <th mat-header-cell *matHeaderCellDef class="colorcabecera"> Update </th>
+      <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" (click)="UpdateRecibo(element)" (click)="openSnackBar(element.CodRecibo, element.IdVendedor)">
+            <mat-icon >sync</mat-icon>
+          </button>
+      </td>      
+    </ng-container>
+     -->
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No hay datos en la tabla "{{input.value}}"</td>
+    </tr>
+  </table>

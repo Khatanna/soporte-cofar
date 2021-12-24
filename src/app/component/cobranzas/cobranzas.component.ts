@@ -59,10 +59,10 @@ export class CobranzasComponent implements OnInit {
     this.cobranzasServices.ActualizaRecibos(obj);
   }
 
-  openDialog() {
+  openDialog(obj:ICobranzas) {
    
     const dialogRef = this.dialog.open(CobranzaDetalleComponent, {
-      width: "70%"
+      width: "100%"
     });
   }
 
