@@ -23,11 +23,11 @@ export class CobranzaDetalleComponent implements OnInit {
   constructor(
     private cobranzasServicesdet: CobranzadetService,
     public dialogRef: MatDialogRef<CobranzaDetalleComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: {name: string}
     ) {}
 
   ngOnInit(): void {
-    this.cobranzasServicesdet.ObtenerAbonosPorID().subscribe(resp=>this.dataSource.data=resp)
+    this.cobranzasServicesdet.ObtenerAbonosPorID(this.data.name).subscribe(resp=>this.dataSource.data=resp)
   }
   
 }

@@ -6,6 +6,7 @@ import { ICobranzas } from 'src/app/models/cobranzas';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import {CobranzaDetalleComponent} from './../cobranza-detalle/cobranza-detalle.component';
+import { element } from "protractor";
 
 @Component({
   selector: 'app-cobranzas',
@@ -60,10 +61,11 @@ export class CobranzasComponent implements OnInit {
   }
 
   openDialog(obj:ICobranzas) {
-   
+    localStorage.setItem("var_reciboId", obj.ReciboID);
+    
     const dialogRef = this.dialog.open(CobranzaDetalleComponent, {
+      data: {name: obj.ReciboID},
       width: "100%"
     });
   }
-
 }
