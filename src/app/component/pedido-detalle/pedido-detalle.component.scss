@@ -1,0 +1,47 @@
+table {
+    width: 96%;
+    margin: 1rem auto; 
+  }
+  
+  .mat-form-field {
+    width: 96%;    
+    font-size: 14px;
+    margin: 1rem ; 
+  }
+
+  .mat-cell {
+    padding: 8px 8px 8px 0;
+  }
+
+  .espacio {
+    justify-content: center;
+    height: 48px;
+  }
+
+  .textsize{
+    font-size: 16px;
+  }
+
+
+  .textsizeceldas{
+    font-size: 12px;
+  }
+
+  .colorcabecera{
+    background-color: rgb(239, 239, 243);
+    padding-right: 10px;
+  }
+
+  .centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+  }

@@ -20,8 +20,8 @@
         <div class="grupoBotones">
           <button mat-button [matMenuTriggerFor]="menu">Visitas</button>
             <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['vistas']" routerLinkActive="active" (click)="test(1100)">Industria & Construcción</button>
-            <button mat-menu-item [routerLink]="['visitas']" routerLinkActive="active" (click)="test(1200)">Consumo & Pharma</button>
+            <button mat-menu-item [routerLink]="['vistas']" routerLinkActive="active" (click)="AsignarVariableGlobal('1100')">Industria & Construcción</button>
+            <button mat-menu-item [routerLink]="['visitas']" routerLinkActive="active" (click)="AsignarVariableGlobal('1200')">Consumo & Pharma</button>
             </mat-menu>
             
             <button mat-button [routerLink]="['pedidos']" routerLinkActive="active" >Pedidos</button>

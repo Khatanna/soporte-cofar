@@ -4,6 +4,8 @@ import { PedidosService } from '../../servicios/pedidos.service';
 import { MatSort } from '@angular/material/sort';
 import { IPedidos } from 'src/app/models/pedidos';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { PedidoDetalleComponent } from '../pedido-detalle/pedido-detalle.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pedidos',
@@ -21,7 +23,11 @@ export class PedidosComponent implements OnInit {
     
   }
 
-  constructor(private pedidosService: PedidosService, private _snackBar: MatSnackBar) { }
+  constructor(
+    private pedidosService: PedidosService, 
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
+    ) { }
   ngOnInit(): void {
      this.pedidosService.ObtenerTodosPedidos().subscribe(resp=>this.dataSource.data=resp)
   } 
@@ -49,6 +55,15 @@ export class PedidosComponent implements OnInit {
   SnackBarCopy() {
     this._snackBar.open("Copiado al portapales", "Cerrar", {
       duration: 1000,
+    });
+  }
+
+  openDialog(obj:IPedidos) {
+    localStorage.setItem("var_pedidoId", obj.PedidoID);  // esta es la forma de asignar un valor local es de tipo string en este caso;
+
+    const dialogRef = this.dialog.open(PedidoDetalleComponent, {
+      data: {name: obj.PedidoID},
+      width: "100%"
     });
   }
 

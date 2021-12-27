@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  test(orgVentas:any){
-    localStorage.setItem("OrgVentas", JSON.stringify(orgVentas))
+  AsignarVariableGlobal(orgVentas:any){
+    localStorage.setItem("OrgVentas", orgVentas);
   }
 }

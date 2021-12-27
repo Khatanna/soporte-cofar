@@ -61,8 +61,8 @@ export class CobranzasComponent implements OnInit {
   }
 
   openDialog(obj:ICobranzas) {
-    localStorage.setItem("var_reciboId", obj.ReciboID);
-    
+    localStorage.setItem("var_reciboId", obj.ReciboID);  // esta es la forma de asignar un valor local es de tipo string en este caso;
+
     const dialogRef = this.dialog.open(CobranzaDetalleComponent, {
       data: {name: obj.ReciboID},
       width: "100%"

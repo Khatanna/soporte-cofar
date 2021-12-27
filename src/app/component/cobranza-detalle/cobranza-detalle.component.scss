@@ -38,3 +38,10 @@ table {
     align-items: center;
     flex-direction: column;
   }
+
+  .table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+  }

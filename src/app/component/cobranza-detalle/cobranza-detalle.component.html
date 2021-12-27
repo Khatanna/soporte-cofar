@@ -8,8 +8,8 @@
     </mat-form-field>
   </div>
 
-
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+ <div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
  
     <!-- Name Column -->
@@ -81,3 +81,4 @@
       <td class="mat-cell" colspan="4">No hay datos en la tabla "{{input.value}}"</td>
     </tr>
   </table>
+ </div>

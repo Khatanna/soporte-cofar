@@ -23,7 +23,7 @@ export class CobranzaDetalleComponent implements OnInit {
   constructor(
     private cobranzasServicesdet: CobranzadetService,
     public dialogRef: MatDialogRef<CobranzaDetalleComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: {name: string}
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: {name: string}  // recepcion del parametro enviado desde cobranzas, no lo estoy usando
     ) {}
 
   ngOnInit(): void {

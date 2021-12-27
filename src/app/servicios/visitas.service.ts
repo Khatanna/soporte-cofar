@@ -11,17 +11,15 @@ import { IVisitas } from '../models/visitas'
   providedIn: 'root'
 })
 export class VisitasService {
-  OrgVentasActual:any
+  OrgVen:any
 
   private VisitasCollection: AngularFireList<IVisitas>;
   lst_visitas: Observable<IVisitas[]>;
 
   constructor(private readonly db:AngularFireDatabase) { 
 
-    this.OrgVentasActual = localStorage.getItem("OrgVentas");
-    console.log(this.OrgVentasActual);
-    
-    this.VisitasCollection = db.list(":80/Actividad/"+this.OrgVentasActual);    
+    this.OrgVen = localStorage.getItem("OrgVentas");    
+    this.VisitasCollection = db.list(":80/Actividad/"+this.OrgVen);    
     
     this.lst_visitas = this.VisitasCollection.snapshotChanges().pipe(
       map( actions => actions.map( a => {
@@ -33,6 +31,21 @@ export class VisitasService {
   }
 
   ObtenerTodasVisitas(){
+    this.ObtenerListadoFirebasevisitas(this.db);
     return this.lst_visitas;
   }
+  
+  ObtenerListadoFirebasevisitas(dbs:AngularFireDatabase) {
+        
+    this.OrgVen = localStorage.getItem("OrgVentas");  // variable localglobal no es optimo pero funciona por ahora
+    this.VisitasCollection = dbs.list(":80/Actividad/"+this.OrgVen);    
+    
+    this.lst_visitas = this.VisitasCollection.snapshotChanges().pipe(
+      map( actions => actions.map( a => {
+        const data = a.payload.toJSON() as IVisitas;
+        const id = a.payload.key;
+        return data; 
+      }))
+    );
+}
 }
