@@ -27,4 +27,7 @@ export class PedidoDetalleComponent implements OnInit {
     this.pedidoServicesdet.ObtenerDetallePorID().subscribe(resp=>this.dataSource.data=resp)
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

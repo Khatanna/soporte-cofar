@@ -29,5 +29,9 @@ export class CobranzaDetalleComponent implements OnInit {
   ngOnInit(): void {
     this.cobranzasServicesdet.ObtenerAbonosPorID(this.data.name).subscribe(resp=>this.dataSource.data=resp)
   }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
   
 }

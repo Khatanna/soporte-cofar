@@ -1,4 +1,10 @@
-<p>Detalle del Pedido</p>
+<mat-toolbar color="primary">
+  <span>Detalle del Pedido</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button >
+    <mat-icon>sync</mat-icon>
+  </button>
+ </mat-toolbar>
 
 <div class="centrado">
     <mat-form-field appearance="outline">
@@ -100,6 +106,10 @@
           <td class="mat-cell" colspan="4">No hay coincidencias con : "{{input.value}}"</td>
         </tr>
       </table>   
+    </div>
+
+    <div mat-dialog-actions class="alinearBoton">
+      <button mat-button  (click)="onNoClick()">Cerrar</button>      
     </div>
 
 

@@ -1,4 +1,13 @@
-<p>Detalle del Recibo</p>
+<mat-toolbar color="primary">
+ <span>Detalle del Recibo</span>
+ <span class="example-spacer"></span>
+ <button mat-icon-button >
+   <mat-icon>sync</mat-icon>
+ </button>
+</mat-toolbar>
+
+
+
 
 <div class="centrado">
     <mat-form-field appearance="outline">
@@ -6,7 +15,7 @@
       <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aqui" style="color: blueviolet;" #input>
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-  </div>
+</div>
 
  <div class="table-container">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -82,3 +91,7 @@
     </tr>
   </table>
  </div>
+
+ <div mat-dialog-actions class="alinearBoton">
+  <button mat-button  (click)="onNoClick()">Cerrar</button>      
+</div>
