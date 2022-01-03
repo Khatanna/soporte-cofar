@@ -33,5 +33,11 @@ export class CobranzaDetalleComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  //ActualizaDetalleRecibo
+  UpdateDetalleRecibo(){
+    console.log(this.dataSource.data.values);
+    this.cobranzasServicesdet.ActualizaDetRecibos();
+  }
   
 }

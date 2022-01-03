@@ -45,4 +45,27 @@ export class CobranzadetService {
           }))
         );
   }
+
+
+  ActualizaDetRecibos(){
+
+    var i=0;
+    this.lst_cobranzasDet.forEach(element => { 
+
+      let aux="0";
+      const cad = element[0].FechaModificacion;
+      const valor = cad.substring(cad.length-1,cad.length)
+      if(valor=="0"){
+        aux="1";
+      }
+      let fecha = cad.substring(0,cad.length-1)
+      fecha=fecha + aux;
+/*
+      return this.CobranzasCollection.update(element[0].ReciboID,{
+        FechaModificacion: fecha
+      });
+*/
+    });
+
+  }
 }
