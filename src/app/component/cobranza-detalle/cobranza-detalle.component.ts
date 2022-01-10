@@ -36,7 +36,6 @@ export class CobranzaDetalleComponent implements OnInit {
 
   //ActualizaDetalleRecibo
   UpdateDetalleRecibo(){
-    console.log(this.dataSource.data.values);
     this.cobranzasServicesdet.ActualizaDetRecibos();
   }
   

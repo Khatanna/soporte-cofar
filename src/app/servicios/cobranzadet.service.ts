@@ -12,7 +12,7 @@ export class CobranzadetService {
 
   private CobranzasCollection: AngularFireList<ICobranzasdet>;
   lst_cobranzasDet: Observable<ICobranzasdet[]>;
-
+  private lst: Observable<ICobranzasdet[]>; 
   var_reciboId : string | any;
 
   constructor(private readonly db:AngularFireDatabase) { 
@@ -26,10 +26,13 @@ export class CobranzadetService {
         return data;
       }))
     );
+
+    this.lst = this.lst_cobranzasDet;
   }
 
   ObtenerAbonosPorID(reciboID : string){  // parametro enviado reciboID no estoy usando, esto para el futuro.
     this.Obtenerregis(this.db);  
+    this.lst = this.lst_cobranzasDet;
     return this.lst_cobranzasDet;
   }
 
@@ -49,17 +52,28 @@ export class CobranzadetService {
 
   ActualizaDetRecibos(){
 
+    var y=0;
+    for( var x in this.lst){
+
+      console.log(x)
+      y++;
+    }
+
+
     var i=0;
-    this.lst_cobranzasDet.forEach(element => { 
+    this.lst.forEach(element => { 
 
       let aux="0";
-      const cad = element[0].FechaModificacion;
+      const cad = element[i].FechaModificacion;
       const valor = cad.substring(cad.length-1,cad.length)
       if(valor=="0"){
         aux="1";
       }
       let fecha = cad.substring(0,cad.length-1)
       fecha=fecha + aux;
+
+      console.log(element[i].AbonoID);
+      i++;
 /*
       return this.CobranzasCollection.update(element[0].ReciboID,{
         FechaModificacion: fecha
