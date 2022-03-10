@@ -74,12 +74,11 @@ export class CobranzadetService {
 
       console.log(element[i].AbonoID);
       i++;
-/*
-      return this.CobranzasCollection.update(element[0].ReciboID,{
+
+      return this.CobranzasCollection.update(element[i-1].AbonoID,{
         FechaModificacion: fecha
       });
-*/
-    });
 
+    });
   }
 }
