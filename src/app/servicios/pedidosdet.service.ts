@@ -10,6 +10,7 @@ import { IPedidosDet } from '../models/pedidosdet';
 export class PedidosdetService {
 
   private PedidoCollection: AngularFireList<IPedidosDet>;
+  private lst: Observable<IPedidosDet[]>; 
   lst_pedidosDet: Observable<IPedidosDet[]>;
 
   var_pedidoId : string | any;
@@ -23,11 +24,14 @@ export class PedidosdetService {
         return data;
       }))
     );
+
+    this.lst = this.lst_pedidosDet;
    }
 
    
   ObtenerDetallePorID(){  
     this.ConsultaPedidoDetFirebase(this.db);  
+    this.lst = this.lst_pedidosDet;
     return this.lst_pedidosDet;
   }
 
@@ -42,6 +46,40 @@ export class PedidosdetService {
       }))
     );
   }
+
+
+  ActualizaDetallePedido(){
+
+    var y=0;
+    for( var x in this.lst){
+
+      console.log(x)
+      y++;
+    }
+
+
+    var i=0;
+    this.lst.forEach(element => { 
+
+      let aux="0";
+      const cad = element[i].FechaModificacion;
+      const valor = cad.substring(cad.length-1,cad.length)
+      if(valor=="0"){
+        aux="1";
+      }
+      let fecha = cad.substring(0,cad.length-1)
+      fecha=fecha + aux;
+
+      console.log(element[i].PedidoDetalleID);
+      i++;
+
+      return this.PedidoCollection.update(element[i-1].PedidoDetalleID,{
+        FechaModificacion: fecha
+      });
+
+    });
+  }
+
 }
 
 

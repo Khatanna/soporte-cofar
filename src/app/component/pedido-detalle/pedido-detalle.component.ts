@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { PedidosdetService } from 'src/app/servicios/pedidosdet.service';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-pedido-detalle',
@@ -21,6 +22,7 @@ export class PedidoDetalleComponent implements OnInit {
 
   constructor(   
     private pedidoServicesdet: PedidosdetService,
+    private _snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<PedidoDetalleComponent>) {}
 
   ngOnInit(): void {
@@ -29,5 +31,17 @@ export class PedidoDetalleComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+    //ActualizaDetallePedido
+    UpdateDetallePedido(){
+      this.pedidoServicesdet.ActualizaDetallePedido();
+    }
+
+
+  openSnackBarDetalle() {
+    this._snackBar.open("Detalle Actualizado", "Cerrar", {
+      duration: 2500,
+    });
   }
 }
