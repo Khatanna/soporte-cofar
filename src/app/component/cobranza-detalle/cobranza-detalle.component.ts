@@ -1,5 +1,6 @@
 import { Component,Inject, Optional,OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { CobranzadetService } from 'src/app/servicios/cobranzadet.service';
 
@@ -22,6 +23,7 @@ export class CobranzaDetalleComponent implements OnInit {
 
   constructor(
     private cobranzasServicesdet: CobranzadetService,
+    private _snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<CobranzaDetalleComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: {name: string}  // recepcion del parametro enviado desde cobranzas, no lo estoy usando
     ) {}
@@ -37,6 +39,12 @@ export class CobranzaDetalleComponent implements OnInit {
   //ActualizaDetalleRecibo
   UpdateDetalleRecibo(){
     this.cobranzasServicesdet.ActualizaDetRecibos();
+  }
+
+  openSnackBarAbonos() {
+    this._snackBar.open("Abonos Actualizados", "Cerrar", {
+      duration: 2500,
+    });
   }
   
 }
