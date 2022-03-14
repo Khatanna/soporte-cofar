@@ -15,11 +15,12 @@ table {
 
   .espacio {
     justify-content: center;
-    height: 48px;
+    height: 70px;
   }
 
   .textsize{
     font-size: 16px;
+    font-weight: 200;
   }
 
 
@@ -37,4 +38,8 @@ table {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  .colorFilter{
+    color: aquamarine;
   }
