@@ -20,17 +20,18 @@ export class PedidosComponent implements OnInit {
    applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-    
+
   }
 
   constructor(
-    private pedidosService: PedidosService, 
+    private pedidosService: PedidosService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog
     ) { }
+    
   ngOnInit(): void {
      this.pedidosService.ObtenerTodosPedidos().subscribe(resp=>this.dataSource.data=resp)
-  } 
+  }
 
   openSnackBar(codrec: string, idven: string) {
     this._snackBar.open("Actualizado:   Pedido " + codrec + " - " + idven, "Cerrar", {

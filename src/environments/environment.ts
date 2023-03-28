@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 // QAS
-/*
+
 export const environment = {
   production: false,
   configurarFirebase: {
@@ -16,11 +16,11 @@ export const environment = {
   appId: "1:135236642723:web:f035c7cc03b06e6e"
   }
 };
-*/
+
 
 // PRD
 
-export const environment = {
+/* export const environment = {
   production: false,
   configurarFirebase: {
   apiKey: "AIzaSyAWwG_aze7unnvtaFtQYWleDb6OeZeGL4A",
@@ -32,7 +32,7 @@ export const environment = {
   appId: "1:414741511676:web:4393e7d71563605e304679"
  }
 };
-
+ */
 
 /*
  * For easier debugging in development mode, you can import the following file

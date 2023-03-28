@@ -1,0 +1,127 @@
+<div class="full-width-container">
+
+<div >
+    <mat-toolbar >
+      <span>Detalle del usuario {{usuario.Nombre}}</span>
+    </mat-toolbar>
+  </div>
+
+  <!-- <mat-dialog-content> -->
+
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Codigo usuario</mat-label>
+          <input matInput disabled [value]="usuario.CodUsuario" >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Cargo</mat-label>
+          <input matInput disabled [value]="usuario.Cargo">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Codigo SAP</mat-label>
+          <input matInput disabled [value]="usuario.CodigoSap">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Rol ID</mat-label>
+          <input matInput disabled [value]="usuario.RolID">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <br>
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombres y apellidos</mat-label>
+          <input matInput disabled [value]="usuario.Nombre">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contrasena</mat-label>
+          <input matInput disabled [value]="usuario.Contrasena">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Organizacion de ventas</mat-label>
+          <input matInput disabled [value]="usuario.Organizacion">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Division</mat-label>
+          <input matInput disabled [value]="usuario.Division">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Regional ID</mat-label>
+          <input matInput disabled [value]="usuario.RegionalID">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Regional</mat-label>
+          <input matInput disabled [value]="usuario.Regional">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Regional Cobranzas</mat-label>
+          <input matInput disabled [value]="usuario.RegionalCBZ">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Ultima vez que ingreso</mat-label>
+          <input matInput disabled [value]="usuario.Fecha">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <br>
+
+    <mat-card>
+      <mat-card-content>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Días tolerancia pedido </mat-label>
+    <mat-select [(ngModel)]="diasPedidoSel"  >
+      <mat-option *ngFor="let dias of diasToleranciaList" [value]="dias.value" >{{ dias.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Días tolerancia cobranza</mat-label>
+    <mat-select [(ngModel)] = "diasCobranzaSel" >
+      <mat-option *ngFor="let dias of diasToleranciaList" [value]="dias.value">{{ dias.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Días tolerancia factura</mat-label>
+    <mat-select [(ngModel)] = "diasFacturaSel" >
+      <mat-option *ngFor="let dias of diasToleranciaList" [value]="dias.value">{{ dias.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-slide-toggle  [(ngModel)]="puedeModificarDias" >¿Puede modificar los dias de tolerancia ?</mat-slide-toggle>
+
+</mat-card-content>
+</mat-card>
+
+<br>
+
+<!-- </mat-dialog-content>
+<mat-dialog-actions> -->
+  <div class="button-container">
+    <button mat-button color="warn" (click)="onCancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onAceptar()">Modificar</button>
+  </div>
+<!-- </mat-dialog-actions> -->
+</div>
+
+
+
+
+
+
+

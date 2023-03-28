@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { app_routing } from "./app.router"
 import { VisitasService } from './servicios/visitas.service'
@@ -35,6 +38,8 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import { CobranzaDetalleComponent } from './component/cobranza-detalle/cobranza-detalle.component';
 import { PedidoDetalleComponent } from './component/pedido-detalle/pedido-detalle.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { UsuarioDetalleComponent } from './component/usuario-detalle/usuario-detalle.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     CobranzasComponent,
     UsuariosComponent,
     CobranzaDetalleComponent,
-    PedidoDetalleComponent
+    PedidoDetalleComponent,
+    UsuarioDetalleComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,10 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     ClipboardModule,
     MatDialogModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    CommonModule,
+    FormsModule,
 
     //firebase
     AngularFirestoreModule,

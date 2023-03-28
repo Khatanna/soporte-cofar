@@ -12,11 +12,11 @@ export class CobranzadetService {
 
   private CobranzasCollection: AngularFireList<ICobranzasdet>;
   lst_cobranzasDet: Observable<ICobranzasdet[]>;
-  private lst: Observable<ICobranzasdet[]>; 
+  private lst: Observable<ICobranzasdet[]>;
   var_reciboId : string | any;
 
-  constructor(private readonly db:AngularFireDatabase) { 
-    
+  constructor(private readonly db:AngularFireDatabase) {
+
     this.var_reciboId = localStorage.getItem("var_reciboId");  // variable localglobal no es optimo pero funciona por ahora
     this.CobranzasCollection = db.list(":80/Abono", ref => { return ref.orderByChild("ReciboID").equalTo(localStorage.getItem("var_reciboId"))});
 
@@ -31,16 +31,18 @@ export class CobranzadetService {
   }
 
   ObtenerAbonosPorID(reciboID : string){  // parametro enviado reciboID no estoy usando, esto para el futuro.
-    this.Obtenerregis(this.db);  
+    this.Obtenerregis(this.db);
     this.lst = this.lst_cobranzasDet;
     return this.lst_cobranzasDet;
   }
 
   Obtenerregis(dbs:AngularFireDatabase) {
-        
+
         this.var_reciboId = localStorage.getItem("var_reciboId");  // variable localglobal no es optimo pero funciona por ahora
-        this.CobranzasCollection = dbs.list(":80/Abono", ref => { return ref.orderByChild("ReciboID").equalTo(this.var_reciboId)});
-    
+        this.CobranzasCollection = dbs.list(":80/Abono", ref => {
+          return ref.orderByChild("ReciboID").equalTo(this.var_reciboId)
+        });
+
         this.lst_cobranzasDet = this.CobranzasCollection.snapshotChanges().pipe(
           map( actions => actions.map( a => {
             const data = a.payload.toJSON() as ICobranzasdet;
@@ -61,7 +63,7 @@ export class CobranzadetService {
 
 
     var i=0;
-    this.lst.forEach(element => { 
+    this.lst.forEach(element => {
 
       let aux="0";
       const cad = element[i].FechaModificacion;
