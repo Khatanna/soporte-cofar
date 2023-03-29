@@ -13,7 +13,8 @@ import { IUsuarios } from '../models/usuarios';
         }
 
     update(codUsuario:string, objUsuario:IUsuarios):Promise<void > {
-        return this.db.object(this.child + codUsuario).update({
+
+      return this.db.object(this.child + codUsuario).update({
           DiasToleranciaTipoCambioPedido : objUsuario.DiasToleranciaTipoCambioPedido,
           DiasToleranciaTipoCambioCobranza : objUsuario.DiasToleranciaTipoCambioCobranza,
           DiasToleranciaTipoCambioFactura : objUsuario.DiasToleranciaTipoCambioFactura,
