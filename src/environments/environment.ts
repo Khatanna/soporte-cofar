@@ -7,13 +7,14 @@
 export const environment = {
   production: false,
   configurarFirebase: {
-    apiKey: "AIzaSyADd36wL9ZiA1QKPMDK4_fsMcwi4hC1xsk",
-  authDomain: "hansa-business-mobile-qas.firebaseapp.com",
-  databaseURL: "https://hansa-business-mobile-qas.firebaseio.com",
-  projectId: "hansa-business-mobile-qas",
-  storageBucket: "hansa-business-mobile-qas.appspot.com",
-  messagingSenderId: "135236642723",
-  appId: "1:135236642723:web:f035c7cc03b06e6e"
+    apiKey: "AIzaSyCeXMOS2g8ZTmWJy_fFj7ZwzYd7bBCTchA",
+    authDomain: "hbm-cofar.firebaseapp.com",
+    databaseURL: "https://hbm-cofar-default-rtdb.firebaseio.com",
+    projectId: "hbm-cofar",
+    storageBucket: "hbm-cofar.appspot.com",
+    messagingSenderId: "14357240146",
+    appId: "1:14357240146:web:8f099a9fe171895998828b",
+    measurementId: "G-VL0REQNLD0"
   }
 };
 

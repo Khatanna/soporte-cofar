@@ -10,7 +10,7 @@ import { IPedidosDet } from '../models/pedidosdet';
 export class PedidosdetService {
 
   private PedidoCollection: AngularFireList<IPedidosDet>;
-  private lst: Observable<IPedidosDet[]>; 
+  private lst: Observable<IPedidosDet[]>;
   lst_pedidosDet: Observable<IPedidosDet[]>;
 
   var_pedidoId : string | any;
@@ -28,9 +28,9 @@ export class PedidosdetService {
     this.lst = this.lst_pedidosDet;
    }
 
-   
-  ObtenerDetallePorID(){  
-    this.ConsultaPedidoDetFirebase(this.db);  
+
+  ObtenerDetallePorID(){
+    this.ConsultaPedidoDetFirebase(this.db);
     this.lst = this.lst_pedidosDet;
     return this.lst_pedidosDet;
   }
@@ -59,7 +59,7 @@ export class PedidosdetService {
 
 
     var i=0;
-    this.lst.forEach(element => { 
+    this.lst.forEach(element => {
 
       let aux="0";
       const cad = element[i].FechaModificacion;
