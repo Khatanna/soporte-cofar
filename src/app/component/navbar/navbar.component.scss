@@ -1,24 +1,17 @@
-.espacio {
-    flex: 1 1 auto;
-  }
+.grupoBotones {
+  padding-left: 150px;
+}
 
-  .grupoBotones {
-    padding-left: 150px;
-  }
+.banertop {
+  color: blanchedalmond;
+  height: 40px;
+}
 
-  .banertop{
-      background-color: rgb(0, 0, 0);   // #673ab7;
-      color: blanchedalmond;
-      height: 40px;
-  }
+.textsize {
+  font-size: 12px;
+}
 
-  .textsize{
-    font-size: 12px;
-  }
-
-  .espacioCompleto{
-    width: 100%;
-    margin: 1rem auto;
-  }
-
-
+.espacioCompleto {
+  width: 100%;
+  margin: 1rem auto;
+}

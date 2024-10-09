@@ -1,6 +1,7 @@
 table {
     width: 99%;
     margin: 1rem auto; 
+    max-height: 50vh;
   }
   
   .mat-form-field {
@@ -8,18 +9,12 @@ table {
     font-size: 14px;
     margin: 1rem; 
   }
-
-  .espacio {
-    justify-content: center;
-    height: 80px;
-  }
   
   .textsize{
     font-size: 16px;
     font-weight: 200;
   }
-  
-  
+    
   .textsizeceldas{
     font-size: 12px;
   }
